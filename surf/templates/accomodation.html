@@ -1,0 +1,78 @@
+{% extends "__layout__.html" %}
+{% block content %}
+
+<!--================Header Area =================-->
+
+ <!--================Banner Area =================-->
+        <section class="banner_area">
+            <div class="container">
+                <div class="banner_inner_content">
+                    <h3>ACCOMODATION</h3>
+                    <ul>
+                        <li class="active"><a href="#">Home</a></li>
+                        <li><a href="#">ACCOMODATION</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <!--================End Banner Area =================-->
+        
+        <!--================Explor Room Area =================-->
+        <section class="explor_room_area explore_room_list">
+            <div class="container">
+                <div class="explor_title row m0">
+                    <div class="left_ex_title">
+                        <h2>Explor Our <span>rooms</span></h2>
+                        <p>choose room according to budget</p>
+                        <p>We offer a wide range of accommodation to all surfers and travellers. Nine bedrooms with surfer style design are available through the whole year. We offer deluxe double rooms, two beautiful junior suites and two master suites with spacious living rooms. Even a shared dorm room with five comfortable beds is available. All our rooms have an en-suite bathroom to offer you more comfort and privacy. Enjoy the high quality of our hotel, relax at the air conditioned lobby or chill on the large and sunny rooftop terrace with magnificent view over Tamraght village as well as sea horizon.</p>
+                    </div>
+                </div>
+                <div class="row explor_room_item_inner">
+                    {% for room in rooms %}
+                    <div class="col-md-4 col-sm-6">
+                        <div class="explor_item">
+                            <a href="#" class="room_image">
+                                <img src="{{ room.home_img }}" alt="">
+                            </a>
+                            <div class="explor_text">
+                                <a href="#"><h4>{{ room.title }}</h4></a>
+                                <p>
+                                    {{ room.description }}...
+                                </p>
+                                <div class="explor_footer">
+                                    <div class="pull-left">
+                                        <h3>${{ room.price }} <span>/ Night</span></h3>
+                                    </div>
+                                    <div class="pull-right">
+                                        <a class="book_now_btn" href="{{ url_for('rooms.room', room_id=room) }}">View details</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                 
+                      {% endfor %}               
+                <nav aria-label="Page navigation" class="room_pagination">
+                    <ul class="pagination">
+                        <li>
+                            <a href="#" aria-label="Previous">
+                                <i class="fa fa-angle-left" aria-hidden="true"></i>
+                            </a>
+                        </li>
+                        <li><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li>
+                            <a href="#" aria-label="Next">
+                                <i class="fa fa-angle-right" aria-hidden="true"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </section>
+        <!--================End Explor Room Area =================-->
+
+
+ {% endblock content %}

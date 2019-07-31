@@ -1,0 +1,35 @@
+CREATE USER 'ss00'@'localhost' IDENTIFIED BY 'ss00';
+
+
+CREATE DATABASE ss00;
+
+
+GRANT ALL PRIVILEGES ON ss00 . * TO 'ss00'@'localhost';
+
+
+
+<td><span class="status text-warning">&bull;</span> Inactive</td>
+
+<span class="status text-success">&bull;</span>
+
+
+93.104.210.91
+
+
+P@ssword9876544axFZ
+
+
+t2QM7v5hqT2m
+
+xXxbkata098
+
+apache2ctl configtest
+
+
+scp katalooni@93.104.210.91:/path/to/remote/file /path/to/local/file
+
+
+
+Avtivating :
+
+venv\Scripts\activate

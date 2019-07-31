@@ -1,0 +1,324 @@
+{% import "bootstrap/utils.html" as utils %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% from "_formhelpers.html" import render_field %}
+{% extends "__layout__.html" %}
+{% block content %}
+        
+        <!--================Slider Area =================-->
+        <section class="main_slider_area main_s_banner">
+            <div class="book_table_area">
+                <div class="container">
+                    <h4 class="book_single_one">Tamraght Surf Hotel</h4>
+                    <h3 class="book_single_text">Book Your Surf Package</h3>
+                    {{ form.csrf_token }}
+                    <div class="book_table_inner row m0">
+                        <div class="book_table_item">
+                            <div class="input-append date form_datetime">
+                            {{ form.adate(class="input-append date form_datetime", placeholder='Arrival Date') }}
+                                <span class="add-on"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+                            </div>
+                        </div>
+                        <div class="book_table_item">
+                            <div class="input-append date form_datetime">
+                            {{ form.ddate(class="input-append date form_datetime", placeholder='Departure Date') }}
+                                <span class="add-on"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+                            </div>
+                        </div>
+                        <div class="book_table_item">
+                            {{ form.guests(class="selectpicker") }}
+                          
+                        </div>
+                        <div class="book_table_item">
+                            {{ form.nights(class="selectpicker") }}
+                        </div>
+                        <div class="book_table_item">
+                            <a class="book_now_btn" type="submit" href="{{ url_for('rooms.available') }}">Check Availability</a>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--================End Slider Area =================-->
+        
+  <!--================Introduction Area =================-->
+        <section class="introduction_area intro_area2">
+            <div class="container">
+                <div class="row introduction_inner">
+                    <div class="col-md-6">
+                        <div class="introduction_img">
+                            <img src="{{ url_for('static', filename='img/introduction-img2.jpg') }}" alt="">
+
+                            <img src="{{ url_for('static', filename='img/introduction-img3.jpg') }}" alt="">
+
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="introduction_left_text">
+                            <div class="intro_title">
+                                <h2>Introduction <span>of The Surf Hotel</span></h2>
+                                
+                            </div>
+                            <h4>We are Available for business</h4>
+                            <p>
+                            The Surf Hotel Morocco offers you the opportunity to spend a few days or weeks surfing in the best surfing region in Morocco. Our goal is to create a unique surf vacation with varied activities so that you can benefit the most on every single day. Thanks to our local team you will experience an authentic surf holiday with focus on your individual needs.
+                            We look forward to welcome you at The Surf Hotel Morocco!</p>
+                            <div class="row intro_box_item_area">
+                                <div class="col-xs-4">
+                                    <div class="intro_box_item">
+                                        <i class="flaticon-toaster"></i>
+                                        <h4>Restaurant</h4>
+                                    </div>
+                                </div>
+                                <div class="col-xs-4">
+                                    <div class="intro_box_item">
+                                        <i class="flaticon-taxi"></i>
+                                        <h4>pick & drop</h4>
+                                    </div>
+                                </div>
+                                <div class="col-xs-4">
+                                    <div class="intro_box_item">
+                                        <i class="flaticon-wifi"></i>
+                                        <h4>free wifi</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--================End Introduction Area =================-->
+        
+        <!--================Choose Resot Area =================-->
+        <section class="choose_resot_area">
+            <div class="container">
+                <div class="center_title">
+                    <h2>why choose our <span>Hotel</span></h2>
+                    
+                </div>
+                <div class="row choose_resot_inner">
+                    <div class="col-md-5">
+                        <div class="resot_list">
+                            <ul>
+                                <li><a href=""><i class="fa fa-caret-right" aria-hidden="true"></i>Horse Riding</li></a>
+                                <li><a href=""><i class="fa fa-caret-right" aria-hidden="true"></i>Free wifi</li></a>
+                                <li><a href=""><i class="fa fa-caret-right" aria-hidden="true"></i>Bar & garden with terrace</li></a>
+                                <li><a href=""><i class="fa fa-caret-right" aria-hidden="true"></i>Delicious breakfast</li></a>
+                                <li><a href=""><i class="fa fa-caret-right" aria-hidden="true"></i>HIgh customer satisfaction</li></a>
+                                <li><a href=""><i class="fa fa-caret-right" aria-hidden="true"></i>Surf & Yoga</li></a>
+                                <li><a href=""><i class="fa fa-caret-right" aria-hidden="true"></i>Clean room service</li></a>
+                                <li><a href=""><i class="fa fa-caret-right" aria-hidden="true"></i>Camel Riding</li></a>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-7">
+                        <div class="choose_resot_slider owl-carousel">
+                            <div class="item">
+                                <img src="{{ url_for('static', filename='img/resot/f1.jpg') }}" alt="">
+                            </div>
+
+                            <div class="item">
+                                <img src="{{ url_for('static', filename='img/resot/f1.jpg') }}" alt="">
+                            </div>
+                            
+                            <div class="item">
+                                <img src="{{ url_for('static', filename='img/resot/f11.jpg') }}" alt="">
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--================End Choose Resot Area =================-->
+        
+        <!--================Explor Room Area =================-->
+        <section class="explor_room_area explor_slider_area">
+            <div class="container">
+                <div class="explor_title row m0">
+                    <div class="pull-left">
+                        <div class="left_wh_title">
+                            <h2>Explor Our <span>rooms</span></h2>
+                            <p>choose room according to budget</p>
+                        </div>
+                    </div>
+                    <div class="pull-right">
+                        <a class="about_btn_wh" href="{{ url_for('main.accomodation') }}">view all rooms</a>
+                    </div>
+                </div>
+                <div class="explor_room_item_inner explor_slider owl-carousel">
+                    
+                   {% for room in rooms %}
+                    
+                    <div class="item">
+                        <div class="explor_item">
+                            <a href="#" class="room_image">
+                                <img src="{{ room.home_img }}" alt="">
+                            </a>
+                            <div class="explor_text">
+                                <a href="#"><h4>{{ room.title }}</h4></a>
+                                <ul>
+                                    <li><a href="#">10x15</a></li>
+                                    <li><a href="#">Sea view</a></li>
+                                    <li><a href="#">2 Balcony</a></li>
+                                </ul>
+                                <div class="explor_footer">
+                                    <div class="pull-left">
+                                        <h3>${{ room.price }} <span>/ Night</span></h3>
+                                    </div>
+                                    <div class="pull-right">
+                                        <a class="book_now_btn" href="{{ url_for('rooms.room', room_id=room) }}">View details</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %} 
+
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--================End Explor Room Area =================-->
+        
+        <!--================Video Area =================-->
+        <section class="video_area">
+            <div class="container">
+                <div class="video_inner">
+                    <a class="popup-youtube" href="{{ url_for('static', filename='fb.mp4') }}"><i class="flaticon-play-button"></i></a>
+                    <h4>virtual Tour</h4>
+                    <h5>of Tamraght Surf Hotel</h5>
+                </div>
+            </div>
+        </section>
+        <!--================End Video Area =================-->
+        
+        <!--================Latest News Area =================-->
+            <div class="container"><
+            <div class="client_area">
+               
+            <script src="https://apps.elfsight.com/p/platform.js" defer></script>
+            <div class="elfsight-app-f60ca6d1-18b3-4618-ac86-1b6ccea27c56"></div>
+
+            </div>
+                 <script type="text/javascript">
+                 function myFunction() {
+                  var dots = document.getElementById("dots");
+                  var moreText = document.getElementById("more");
+                  var btnText = document.getElementById("myBtn");
+
+                  if (dots.style.display === "none") {
+                    dots.style.display = "inline";
+                    btnText.innerHTML = "Read more"; 
+                    moreText.style.display = "none";
+                  } else {
+                    dots.style.display = "none";
+                    btnText.innerHTML = "Read less"; 
+                    moreText.style.display = "inline";
+                  }
+                }
+                </script>
+
+                <style type="text/css">
+                    #more {display: none;}
+                </style>
+                </div>
+                </div>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="row latest_news_left">
+                            <div class="left_ex_title">
+                                <h2>Latest <span>News</span></h2>
+                            </div>
+                            {% for blog in blogs %}
+                            <div class="col-sm-6">
+                                
+                                <div class="l_news_item">
+                                    <a href="blog-details.html" class="news_img">
+                                        <img src="{{ blog.img_off }}" alt="">
+                                    </a>
+                                    <div class="news_text">
+                                        <a class="l_date" href="#">{{ blog.posted_on.strftime('%Y-%m-%d') }}</a>
+                                        <a href="#"><h4>{{ blog.title }}</h4></a>
+                                        
+                                        <a class="news_more" href="{{ url_for('blog.post', blog_id=blog) }}">Read more</a>
+                                    </div>
+                                </div>
+                            </div>
+                             {% endfor %} 
+                            
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        
+
+                        <div class="right_event">
+                            <div class="left_ex_title">
+                                <h2>Upcoming <span>Events</span></h2>
+                            </div>
+                            
+                            <div class="right_event_area">
+                                {% for event in events %}
+                                <div class="media">
+                                    <div class="media-left">
+                                        <h3>17<span>Aug</span></h3>
+                                    </div>
+                                    <div class="media-body">
+                                        <h4>{{ event.title }}</h4>
+                                    </div>
+                                </div>
+                                {% endfor %} 
+                                <a class="all_s_btn" href="#">view all events</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--================End Latest News Area =================-->
+        
+        <!--================Discount Area =================-->
+        <section class="discount_area">
+            <div class="container">
+                <div class="row discount_inner">
+                    <div class="col-md-4">
+                        <div class="discount_img">
+                            <img src="{{ url_for('static', filename='img/sss.png') }}" alt="">
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="discount_right_content">
+                            <h5>Hot offer</h5>
+                            <h4>Get 40% <span>discount</span> <br /> in summer vocations</h4>
+                            <a class="book_now_btn" href="#">book now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--================End Discount Area =================-->
+        
+        
+        <!--================Search Box Area =================-->
+        <div class="search_area zoom-anim-dialog mfp-hide" id="test-search">
+            <div class="search_box_inner">
+                <h3>Search</h3>
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search for...">
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" type="button"><i class="icon icon-Search"></i></button>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <!--================End Search Box Area =================-->
+        {% endblock content %}
+        
+        

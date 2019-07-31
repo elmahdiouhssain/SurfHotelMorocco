@@ -1,0 +1,83 @@
+{% import "bootstrap/utils.html" as utils %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% from "_formhelpers.html" import render_field %}
+{% extends "__layout__.html" %}
+{% block content %}
+
+<!--================Header Area =================-->
+
+<!--================Banner Area =================-->
+        <section class="banner_area">
+            <div class="container">
+        
+                <div class="banner_inner_content">
+                    <h3>SIGNIN</h3>
+                  
+                </div>
+              
+            </div>
+        </section>
+        <br>
+
+        <div class="container">
+          <form class="form-horizontal" role="form" method="POST" action="">
+            <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+                	<center>
+                    <h2>Please Inter Your Identity</h2>
+                    <p>If you don't have an account please <a href="{{ url_for('users.register') }}">register</a> </p>
+                    {% if error %}
+			            <p class=error><strong>Error:</strong> {{ error }}
+			        {% endif %}
+			            <br>
+			        {% with messages = get_flashed_messages(with_categories=true) %}
+			        {% if messages %}
+			        <div class="alert alert-{{ messages.0.0 }}" role="alert">
+			            {% for category, message in messages %}
+			        {{ message }} </br>
+			        {% endfor %}
+			         </div>
+			         {% endif %}
+			        {% endwith %}
+			        </center>
+                    <hr>
+                     <form class="form-inline"> 
+                      {{ form.csrf_token }} 
+			            <div class="form-group"> 
+
+                        {{ render_field(form.email, class='form-control', placeholder='Enter email...') }}
+			        </div>  
+                    {% for error in form.email.errors %}
+                                 <span style="color: red;">[{{ error }}]</span>
+                                 {% endfor %}
+			            <div class="form-group">
+			            
+                        {{ render_field(form.password, class='form-control', placeholder='Enter password..') }}
+			        </div>  
+                    {% for error in form.password.errors %}
+                                 <span style="color: red;">[{{ error }}]</span>
+                                 {% endfor %}
+
+                        <div class="form-group">
+                         <button type="submit" class="btn btn-primary btn-block login-btn">Login</button>
+                          </div>
+			         
+			            </div>
+			             </form>  
+
+                         
+			                </div>
+            </div>
+            </div>
+
+
+     
+     				   
+            
+    <br>
+    <br>
+    <br>
+
+{% endblock content %}

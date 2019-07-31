@@ -1,0 +1,96 @@
+{% import "bootstrap/utils.html" as utils %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% from "_formhelpers.html" import render_field %}
+{% extends "__layout__.html" %}
+{% block content %}
+<style type="text/css">
+    .s_room_item .s_room_left_img img {
+    max-width: 100%;
+}
+
+</style>
+  <!--================Banner Area =================-->
+        <section class="banner_area">
+            <div class="container">
+                <div class="banner_inner_content">
+                    <h3>Available Rooms</h3>
+
+                </div>
+            </div>
+        </section>
+        <!--================End Banner Area =================-->
+        
+        <!--================Search Room Area =================-->
+        <section class="search_room_area">
+            <div class="container">
+                <div class="row search_room_inner">
+                    <div class="col-md-8">
+                        <div class="row">
+                            {% for room in rooms %}
+
+                            <div class="s_room_item row m0">
+                                <div class="col-md-6">
+                                    <div class="s_room_left_img">
+                                        <img src="{{ room.home_img }}" alt="">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="s_room_right_text">
+                                        <a href="#"><h4>{{ room.title }}</h4></a>
+                                        <ul>
+                                            <li><a href="#">capacity : {{ room.capacity }}</a></li>
+                                            <li><a href="#">Mode : {{ room.mode }}</a></li>
+                                            
+                                           
+                                            <li><a href="#">Price : ${{ room.price }} <span>(view price breakdown)</span> </a></li>
+                                        </ul>
+                                        <a class="book_now_btn" href="{{ url_for('rooms.room', room_id=room) }}">select this room</a>
+                                    </div>
+                                </div>
+                            </div>
+                              {% endfor %} 
+         
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="search_right_sidebar">
+                            <div class="book_room_area">
+
+                                  <div class="book_now_button">
+                                <a class="book_now_btn_black" href="#">New Offers</a>
+                            </div>
+                                <div class="book_room_box">
+                                    
+                                    <div class="book_table_item">
+                                        
+                                        <h3>House Title</h3>
+                                        
+                                    </div>
+
+                                    <div class="explor_item">
+                            <a href="#" class="room_image">
+                                <img src="/static/img/room/Room-1_1-1-380x380.jpg" alt="">
+                            </a>    
+
+                                    <center>
+                                    <div class="book_table_item">
+                                        <a class="book_now_btn" href="#">Check it out now</a>
+                                    </div>
+                                    </center>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--================End Search Room Area =================-->
+        
+
+
+
+
+
+
+{% endblock content %}

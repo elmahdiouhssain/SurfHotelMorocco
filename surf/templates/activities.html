@@ -1,0 +1,195 @@
+{% extends "__layout__.html" %}
+{% block content %}
+<!--================Header Area =================-->
+
+<!--================Banner Area =================-->
+        <section class="banner_area">
+            <div class="container">
+                <div class="banner_inner_content">
+                    <h3>ACTIVITIES</h3>
+                    <ul>
+                        <li class="active"><a href="#">Home</a></li>
+                        <li><a href="#">ACTIVITIES</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <!--================End Banner Area =================-->
+
+        <section class="explor_room_area explore_room_list">
+            <div class="container">
+                <div class="explor_title row m0">
+                    <div class="left_ex_title">
+                        <h2>Explor Our <span>Activities</span></h2>
+                        
+                        <p>Discover our day trips around nearby cities and towns. If you need a break from surfing or just want to explore more of Morocco and its culture, we will give you a few options for authentic excursions in the region. All the trips can be done in one day so you will be back for surfing the next day..</p>
+                    </div>
+                </div>
+ 
+                <div class="row explor_room_item_inner">
+                    <div class="col-md-4 col-sm-6">
+                        <div class="explor_item">
+                            <a href="{{ url_for('main.agadir') }}" class="room_image">
+                                <img src="{{ url_for('static', filename='img/activities/AGADIR.png') }}" alt="">
+                            </a>
+                            <center>
+                            <div class="explor_text">
+                                <a href="{ url_for('main.agadir') }}"><h4>AGADIR (SOUK/KASBAH)</h4></a>
+                
+                                <div class="explor_footer">
+                                        <a class="book_now_btn" href="{{ url_for('main.agadir') }}">View details</a>
+                            </div>
+                            </center>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="explor_item">
+                            <a href="{{ url_for('main.surfing') }}" class="room_image">
+                                <img src="{{ url_for('static', filename='img/activities/SURF.png') }}" alt="">
+                            </a>
+                            <center>
+                            <div class="explor_text">
+                                <a href="{{ url_for('main.surfing') }}"><h4>SURF</h4></a>
+                                
+                                <div class="explor_footer">
+                                    
+                                    
+                                        <a class="book_now_btn" href="{{ url_for('main.surfing') }}">View details</a>
+                                    
+                                </div>
+                            </center>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="explor_item">
+                            <a href="{{ url_for('main.yoga') }}" class="room_image">
+                                <img src="{{ url_for('static', filename='img/activities/YOGA.png') }}" alt="">
+                            </a>
+                            <center>
+                            <div class="explor_text">
+                                <a href="{{ url_for('main.yoga') }}"><h4>YOGA</h4></a>
+                               
+                                <div class="explor_footer">
+                                    
+                                        <a class="book_now_btn" href="{{ url_for('main.yoga') }}">View details</a>
+                                    </div>
+                                </center>
+                          
+                        </div>
+                    </div>
+                    
+
+                    <div class="col-md-4 col-sm-6">
+                        <div class="explor_item">
+                            <a href="{{ url_for('main.hammas') }}" class="room_image">
+                                <img src="{{ url_for('static', filename='img/activities/HAMMAME-MASSAGE.png') }}" alt="">
+                            </a>
+                            <center>
+                            <div class="explor_text">
+                                <a href="{{ url_for('main.hammas') }}"><h4>HAMMAM & MASSAGE</h4></a>
+                               
+                                <div class="explor_footer">
+                                    
+                                        <a class="book_now_btn" href="{{ url_for('main.hammas') }}">View details</a>
+                                    </div>
+                                </center>
+                          
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="explor_item">
+                            <a href="{{ url_for('main.quad') }}" class="room_image">
+                                <img src="{{ url_for('static', filename='img/activities/QUAD.png') }}" alt="">
+                            </a>
+                            <center>
+                            <div class="explor_text">
+                                <a href="{{ url_for('main.quad') }}"><h4>QUAD</h4></a>
+                               
+                                <div class="explor_footer">
+                                    
+                                        <a class="book_now_btn" href="{{ url_for('main.quad') }}">View details</a>
+                                    </div>
+                                </center>
+                          
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="explor_item">
+                            <a href="{{ url_for('main.paradise') }}" class="room_image">
+                                <img src="{{ url_for('static', filename='img/activities/PARADISE-VALLEY.png') }}" alt="">
+                            </a>
+                            <center>
+                            <div class="explor_text">
+                                <a href="{{ url_for('main.paradise') }}"><h4>PARADISE VALLEY</h4></a>
+                               
+                                <div class="explor_footer">
+                                    
+                                        <a class="book_now_btn" href="{{ url_for('main.paradise') }}">View details</a>
+                                    </div>
+                                </center>
+                          
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="explor_item">
+                            <a href="room-details.html" class="room_image">
+                                <img src="{{ url_for('static', filename='img/activities/THE-BAY-OF-IMSSOUANE.png') }}" alt="">
+                            </a>
+                            <center>
+                            <div class="explor_text">
+                                <a href="room-details.html"><h4>THE BAY OF IMSOUANE</h4></a>
+                               
+                                <div class="explor_footer">
+                                    
+                                        <a class="book_now_btn" href="room-details.html">View details</a>
+                                    </div>
+                                </center>
+                          
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="explor_item">
+                            <a href="{{ url_for('main.essaouira') }}" class="room_image">
+                                <img src="{{ url_for('static', filename='img/activities/ESSAOUIRA.png') }}" alt="">
+                            </a>
+                            <center>
+                            <div class="explor_text">
+                                <a href="{{ url_for('main.essaouira') }}"><h4>ESSAOUIRA</h4></a>
+                               
+                                <div class="explor_footer">
+                                    
+                                        <a class="book_now_btn" href="{{ url_for('main.essaouira') }}">View details</a>
+                                    </div>
+                                </center>
+                          
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="explor_item">
+                            <a href="{{ url_for('main.marrakech') }}" class="room_image">
+                                <img src="{{ url_for('static', filename='img/activities/MARRAKESH.png') }}" alt="">
+                            </a>
+                            <center>
+                            <div class="explor_text">
+                                <a href="{{ url_for('main.marrakech') }}"><h4>MARRAKESH</h4></a>
+                               
+                                <div class="explor_footer">
+                                    
+                                        <a class="book_now_btn" href="{{ url_for('main.marrakech') }}">View details</a>
+                                    </div>
+                                </center>
+                          
+                        </div>
+                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+               
+            </div>
+        </section>
+        <!--================End Explor Room Area =================-->
+        <!--================Footer Area =================-->
+ {% endblock content %}

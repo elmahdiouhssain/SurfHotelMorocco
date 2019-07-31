@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="img/fav-icon.png" type="image/x-icon" />
+  <!-- Bootstrap core CSS -->
+  <link href="{{ url_for('static', filename='panel/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" media="screen">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+
+  <!-- Custom styles for this template -->
+  <link href="{{ url_for('static', filename='panel/css/simple-sidebar.css') }}" rel="stylesheet" media="screen">
+  <style type="text/css">
+    
+.card-counter{
+    box-shadow: 2px 2px 10px #DADADA;
+    margin: 5px;
+    padding: 20px 10px;
+    background-color: #fff;
+    height: 100px;
+    border-radius: 5px;
+    transition: .3s linear all;
+  }
+
+  .card-counter:hover{
+    box-shadow: 4px 4px 20px #DADADA;
+    transition: .3s linear all;
+  }
+
+  .card-counter.primary{
+    background-color: #007bff;
+    color: #FFF;
+  }
+
+  .card-counter.danger{
+    background-color: #ef5350;
+    color: #FFF;
+  }  
+
+  .card-counter.success{
+    background-color: #66bb6a;
+    color: #FFF;
+  }  
+
+  .card-counter.info{
+    background-color: #26c6da;
+    color: #FFF;
+  }  
+
+  .card-counter i{
+    font-size: 5em;
+    opacity: 0.2;
+  }
+
+  .card-counter .count-numbers{
+    position: absolute;
+    right: 35px;
+    top: 20px;
+    font-size: 32px;
+    display: block;
+  }
+
+  .card-counter .count-name{
+    position: absolute;
+    right: 35px;
+    top: 65px;
+    font-style: italic;
+    text-transform: capitalize;
+    opacity: 0.5;
+    display: block;
+    font-size: 18px;
+  }
+    
+  </style>
+
+  {% if title %}
+            <title>SURFHOTEL.COM - {{ title }}</title>
+        {% else %}
+            <title>SURFHOTEL.COM</title>
+        {% endif %}
+        </head>
+
+</head>
+
+
+  <div class="d-flex" id="wrapper">
+
+    <!-- Sidebar -->
+    <div class="bg-light border-right" id="sidebar-wrapper">
+      <div class="sidebar-heading"><div class="logo"><a href="{{ url_for('administration.index') }}"><img src="{{ url_for('static', filename='img/panel.png') }}" alt="logo"></a></div></div>
+      <div class="list-group list-group-flush">
+         <a href="{{ url_for('administration.reservations') }}" class="list-group-item list-group-item-action bg-light"><i class="fas fa-credit-card"></i><b>Reservartions</b></a>
+        <a href="{{ url_for('administration.rooms') }}" class="list-group-item list-group-item-action bg-light"><i class="fas fa-bed"></i><b>Rooms</b></a>
+        <a href="{{ url_for('administration.messages') }}" class="list-group-item list-group-item-action bg-light"><i class="fas fa-envelope-open"></i><b>Messages</b></a>
+        <a href="{{ url_for('administration.blog') }}" class="list-group-item list-group-item-action bg-light"><i class="fas fa-newspaper"></i><b>Blog</b></a>
+        <a href="{{ url_for('administration.users') }}" class="list-group-item list-group-item-action bg-light"><i class="fas fa-users"></i><b>Users</b></a> 
+         <a href="{{ url_for('administration.events') }}" class="list-group-item list-group-item-action bg-light"><i class="fas fa-address-card"></i><b>Events</b></a>
+        
+
+      </div>
+    </div>
+    <!-- /#sidebar-wrapper -->
+
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+
+      <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+        <button class="btn btn-primary" id="menu-toggle"><i class="fas fa-toolbox"></i>Tools</button>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+            <li class="nav-item active">
+              <a class="nav-link" href="{{ url_for('main.index') }}" target="_blank"><i class="fas fa-home"></i>Visite Site <span class="sr-only">(current)</span></a>
+              
+
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+               <i class="fas fa-user-shield"></i> Hi, Admin
+              </a>
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#"><i class="fas fa-cogs"></i>Setting</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#"><i class="fas fa-sign-out-alt"></i>Logout</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+
+<!--================Header Area =================-->
+        {% block content %}{% endblock content %}
+
+
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="{{url_for('static', filename='panel/vendor/jquery/jquery.min.js') }}"></script>
+  <script src="{{url_for('static', filename='panel/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+
+  <!-- Menu Toggle Script -->
+  <script>
+    $("#menu-toggle").click(function(e) {
+      e.preventDefault();
+      $("#wrapper").toggleClass("toggled");
+    });
+  </script>
+
+</body>
+
+</html>

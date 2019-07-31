@@ -1,0 +1,101 @@
+{% import "bootstrap/utils.html" as utils %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% from "_formhelpers.html" import render_field %}
+{% extends "playout.html" %}
+{% block content %}
+   <div class="container">
+        <form class="form-horizontal" role="form" method="POST" action="">
+            <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+                    <center>
+                    {% if error %}
+                        <p class=error><strong>Error:</strong> {{ error }}
+                    {% endif %}
+                        <br>
+                    {% with messages = get_flashed_messages(with_categories=true) %}
+                    {% if messages %}
+                    <div class="alert alert-{{ messages.0.0 }}" role="alert">
+                        {% for category, message in messages %}
+                    {{ message }} </br>
+                    {% endfor %}
+                     </div>
+                     {% endif %}
+                    {% endwith %}
+                    </center>
+                    <hr>
+                     <form class="form-inline"> 
+                      {{ form.csrf_token }} 
+                        <div class="form-group"> <label class="sr-only" for="email">User Name</label>
+
+                        {{ render_field(form.title, class='form-control', placeholder='Enter Title') }}
+                    </div>  
+                    {% for error in form.title.errors %}
+                                 <span style="color: red;">[{{ error }}]</span>
+                                 {% endfor %}
+                        <div class="form-group"> <label class="sr-only" for="pwd">Password</label> 
+                        
+                        {{ render_field(form.description, class='form-control', placeholder='Description Here..') }}
+                    </div>  
+                    {% for error in form.description.errors %}
+                                 <span style="color: red;">[{{ error }}]</span>
+                                 {% endfor %}
+                    <div class="form-group"> <label class="sr-only" for="pwd">Password</label> 
+                        
+                        {{ render_field(form.price, class='form-control', placeholder='Price Here..') }}
+                    </div>  
+                    {% for error in form.price.errors %}
+                                 <span style="color: red;">[{{ error }}]</span>
+                                 {% endfor %}
+                    <div class="form-group"> <label class="sr-only" for="pwd">Password</label> 
+                        
+                        {{ render_field(form.mode, class='form-control') }}
+                    </div>  
+                    {% for error in form.mode.errors %}
+                                 <span style="color: red;">[{{ error }}]</span>
+                                 {% endfor %}
+                     <div class="form-group"> <label class="sr-only" for="pwd">Password</label> 
+                        
+                        {{ render_field(form.home_img, class='form-control') }}
+                    </div>  
+                    {% for error in form.home_img.errors %}
+                                 <span style="color: red;">[{{ error }}]</span>
+                                 {% endfor %}
+
+                     <div class="form-group"> <label class="sr-only" for="pwd">Password</label> 
+                        
+                        {{ render_field(form.img1_url, class='form-control') }}
+                    </div>  
+                    {% for error in form.img1_url.errors %}
+                                 <span style="color: red;">[{{ error }}]</span>
+                                 {% endfor %}
+                      <div class="form-group"> <label class="sr-only" for="pwd">Password</label> 
+                        
+                        {{ render_field(form.img2_url, class='form-control') }}
+                    </div>  
+                    {% for error in form.img2_url.errors %}
+                                 <span style="color: red;">[{{ error }}]</span>
+                                 {% endfor %}
+                    <div class="form-group"> <label class="sr-only" for="pwd">Password</label> 
+                        
+                        {{ render_field(form.img3_url, class='form-control') }}
+                    </div>  
+                    {% for error in form.img3_url.errors %}
+                                 <span style="color: red;">[{{ error }}]</span>
+                                 {% endfor %}
+
+                        <div class="form-group">
+                         <button type="submit" class="btn btn-primary btn-block login-btn">Save</button>
+                          </div>
+                     
+                        </div>
+                         </form>  
+
+                         
+                            </div>
+            </div>
+            </div>
+    </div>
+    </div>
+    </div>
+ {% endblock content %}

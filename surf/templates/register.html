@@ -1,0 +1,142 @@
+{% import "bootstrap/utils.html" as utils %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% from "_formhelpers.html" import render_field %}
+{% extends "__layout__.html" %}
+{% block content %}
+
+<!--================Header Area =================-->
+
+<!--================Banner Area =================-->
+        <section class="banner_area">
+            <div class="container">
+            	
+                <div class="banner_inner_content">
+                    <h3>SIGN UP</h3>
+                  
+                </div>
+               
+            </div>
+        </section>
+        <br>
+
+        <div class="container">
+                    <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+                    <center>
+                    <h2>Please Register</h2>
+                    <p>If you are already registed please <a href="{{ url_for('users.login') }}">login</a></p>
+                    {% if error %}
+                        <p class=error><strong>Error:</strong> {{ error }}
+                    {% endif %}
+                        <br>
+                    {% with messages = get_flashed_messages(with_categories=true) %}
+                    {% if messages %}
+                    <div class="alert alert-{{ messages.0.0 }}" role="alert">
+                        {% for category, message in messages %}
+                    {{ message }} </br>
+                    {% endfor %}
+                     </div>
+                     {% endif %}
+                    {% endwith %}
+                    </center>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+                    <div class="form-group has-danger">
+                         <form action="" method="post">
+
+                <form>
+                    <div class="col-sm-12">
+                        <div class="row">
+                            {{ form.csrf_token }} 
+                            <div class="col-sm-6 form-group">
+                              
+                                {{ render_field(form.fname, class='form-control', placeholder='Enter First Name Here..') }}
+                            </div>
+
+                                 {% for error in form.fname.errors %}
+                                 <span style="color: red;">[{{ error }}]</span>
+                                 {% endfor %}
+                            <div class="col-sm-6 form-group">
+                           
+                                {{ render_field(form.lname, class='form-control', placeholder='Enter Last Name Here..') }}
+                            </div>
+                                {% for error in form.lname.errors %}
+                                 <span style="color: red;">[{{ error }}]</span>
+                                 {% endfor %}
+                        </div>                  
+                        <div class="form-group">
+                      
+                                {{ render_field(form.addr, class='form-control', rows="3", placeholder='Enter Address Here..') }}
+                        </div>  
+                                {% for error in form.addr.errors %}
+                                 <span style="color: red;">[{{ error }}]</span>
+                                 {% endfor %}
+
+                          
+                        <div class="row">
+                            <div class="col-sm-4 form-group">
+                              
+                                {{ render_field(form.city, class='form-control', placeholder='Enter City Name Here..') }}
+                            </div> 
+                                {% for error in form.city.errors %}
+                                 <span style="color: red;">[{{ error }}]</span>
+                                 {% endfor %} 
+
+                            <div class="col-sm-4 form-group">
+                               
+                                {{ render_field(form.state, class='form-control', placeholder='Enter State Name Here..') }}
+                            </div>  
+                                {% for error in form.state.errors %}
+                                 <span style="color: red;">[{{ error }}]</span>
+                                 {% endfor %}
+                            <div class="col-sm-4 form-group">
+                           
+                                {{ render_field(form.zipcode, class='form-control', placeholder='Enter Zip Code Here..') }}
+                            </div>    
+                                {% for error in form.zipcode.errors %}
+                                 <span style="color: red;">[{{ error }}]</span>
+                                 {% endfor %}  
+                        </div>                    
+                            <div class="form-group">
+                                {{ render_field(form.phone, class='form-control', placeholder='Enter Phone Number Here..') }}
+                            </div>  
+                                {% for error in form.phone.errors %}
+                                 <span style="color: red;">[{{ error }}]</span>
+                                 {% endfor %}    
+                            <div class="form-group">
+
+                                {{ render_field(form.email, class='form-control', placeholder='Enter Email Address Here..') }}
+                            </div>  
+                                {% for error in form.email.errors %}
+                                 <span style="color: red;">[{{ error }}]</span>
+                                 {% endfor %}
+                            <div class="form-group">
+                                {{ render_field(form.password, class='form-control', placeholder='Enter password Here..') }}
+                            </div>      
+                                {% for error in form.password.errors %}
+                                 <span style="color: red;">[{{ error }}]</span>
+                                 {% endfor %}
+                            <div class="form-group">
+
+                                {{ render_field(form.confirm_password, class='form-control', placeholder='Confirm Password') }}
+                            </div>
+                                {% for error in form.confirm_password.errors %}
+                                 <span style="color: red;">[{{ error }}]</span>
+                                 {% endfor %}
+                            <div class="form-group">
+                             <button type="submit" class="btn btn-primary btn-block login-btn">Register</button>
+                              </div>                  
+                            </div>
+                </form> 
+                </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    <br>
+
+{% endblock content %}

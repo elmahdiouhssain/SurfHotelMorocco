@@ -1,0 +1,149 @@
+{% import "bootstrap/utils.html" as utils %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% from "_formhelpers.html" import render_field %}
+{% extends "__layout__.html" %}
+{% block content %}
+
+
+ <!--================Banner Area =================-->
+        <section class="banner_area">
+            <div class="container">
+                <div class="banner_inner_content">
+                    <h3>{{ title }}</h3>
+                    <ul>
+                        <li class="active"><a href="#">Home</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <!--================End Banner Area =================-->
+  <!--================Blog Details Area =================-->
+        <section class="blog_details_area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9 pull-right">
+                        <div class="blog_details_inner">
+                            <div class="blog_item">
+                                <a href="blog-details.html" class="blog_img">
+                                    <img src="{{ blogs.img_off }}" alt="">
+                                </a>
+                                <div class="blog_text">
+                                    <a href="blog-details.html"><h4>{{ blogs.title }}</h4></a>
+                                    <ul>
+                                        <li><a href="#"><span>By :</span>  Admin</a></li>
+                                        <li><a href="#">{{ blogs.posted_on.strftime('%Y-%m-%d') }}</a></li>
+                                        <li><a href="#">Comments: 4</a></li>
+                                    </ul>
+                                    <div class="card">
+  								<div class="card-body">
+						    
+						  
+
+                                    <p class="lead">
+ 									{{ blogs.body }}
+ 									</p>
+
+                                </div>
+                            </div>
+
+                            </div>
+						</div>
+                            
+                            <div class="s_blog_quote">
+                                <p><i class="fa fa-quote-left" aria-hidden="true"></i> Ut enim ad minima veniam, quis nostrum exercitatio nem ullam corporis suscipit labori osam, nisi ut aliqu id ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur.</p>
+                                <a href="#">- Michale John</a>
+                            </div>
+                            <div class="s_main_text">
+                            	<div class="card">
+  								<div class="card-body">
+						    This is some text within a card body.
+						  </div>
+						</div>
+                         
+
+                            </div>
+                            <div class="s_comment_list">
+                                <h3>Comments 4</h3>
+                                <div class="s_comment_list_inner">
+                                    
+                                        </div>
+                                    </div>
+                                  
+                              
+                            <div class="s_comment_area">
+                                <h3>Leave a Comment</h3>
+                                <div class="s_comment_inner">
+                              
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 pull-right">
+                        <div class="sidebar_area">
+                            <aside class="r_widget search_widget">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" placeholder="Enter Search Keywords">
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-default" type="button"><i class="icon icon-Search"></i></button>
+                                    </span>
+                                </div><!-- /input-group -->
+                            </aside>
+                            <aside class="r_widget categories_widget">
+                                <div class="r_widget_title">
+                                    <h3>Categories</h3>
+                                </div>
+                                <ul>
+                                    <li><a href="#">Restaurant <i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+                                    <li><a href="#">Travel tips <i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+                                    <li><a href="#">Resort <i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+                                    <li><a href="#">General care Tips <i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+                                    <li><a href="#">Activities <i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+                                    <li><a href="#">Photo gallery <i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+                                </ul>
+                            </aside>
+                            <aside class="r_widget recent_widget">
+                                <div class="r_widget_title">
+                                    <h3>Recent News</h3>
+                                </div>
+                                <div class="recent_inner">
+                                    <div class="recent_item">
+                                        <a href="#"><h4>5 tips for book a resort for your family holiday.</h4></a>
+                                        <h5>08 March 2017</h5>
+                                    </div>
+                                    <div class="recent_item">
+                                        <a href="#"><h4>5 tips for book a resort for your family holiday.</h4></a>
+                                        <h5>08 March 2017</h5>
+                                    </div>
+                                    <div class="recent_item">
+                                        <a href="#"><h4>5 tips for book a resort for your family holiday.</h4></a>
+                                        <h5>08 March 2017</h5>
+                                    </div>
+                                    <div class="recent_item">
+                                        <a href="#"><h4>5 tips for book a resort for your family holiday.</h4></a>
+                                        <h5>08 March 2017</h5>
+                                    </div>
+                                </div>
+                            </aside>
+                            <aside class="r_widget tag_widget">
+                                <div class="r_widget_title">
+                                    <h3>Tages</h3>
+                                </div>
+                                <ul>
+                                    <li><a href="#">Holidays</a></li>
+                                    <li><a href="#">Food & Drink</a></li>
+                                    <li><a href="#">Hotels</a></li>
+                                    <li><a href="#">Activities</a></li>
+                                    <li><a href="#">Travel Tips</a></li>
+                                    <li><a href="#">Rooms</a></li>
+                                </ul>
+                            </aside>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--================End Bolg Details Area =================-->
+
+
+{% endblock content %}

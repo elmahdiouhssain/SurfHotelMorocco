@@ -1,0 +1,63 @@
+{% import "bootstrap/utils.html" as utils %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% from "_formhelpers.html" import render_field %}
+{% extends "playout.html" %}
+{% block content %}
+
+        
+
+<body>
+
+      <div class="container-fluid">
+        <div class="container">
+    <div class="row">
+    <div class="col-md-3">
+      <div class="card-counter primary">
+        <i class="fa fa-code-fork"></i>
+        <span class="count-numbers">12</span>
+        <span class="count-name">Flowz</span>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <div class="card-counter danger">
+        <i class="fa fa-ticket"></i>
+        <span class="count-numbers">599</span>
+        <span class="count-name">Messages</span>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <div class="card-counter success">
+        <i class="fa fa-database"></i>
+        <span class="count-numbers">6875</span>
+        <span class="count-name">Reservation</span>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <div class="card-counter info">
+        <i class="fa fa-users"></i>
+        <span class="count-numbers">3500</span>
+        <span class="count-name">Users</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+      </div>
+    </div>
+
+
+    <!-- /#page-content-wrapper -->
+   
+
+  </div>
+  <!-- /#wrapper -->
+
+
+  </body>
+
+ {% endblock content %}

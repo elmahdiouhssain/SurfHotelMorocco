@@ -1,0 +1,108 @@
+{% import "bootstrap/utils.html" as utils %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% from "_formhelpers.html" import render_field %}
+{% extends "__layout__.html" %}
+{% block content %}
+
+<!--================Header Area =================-->
+
+ <!--================Banner Area =================-->
+        <section class="banner_area">
+            <div class="container">
+                <div class="banner_inner_content">
+                	<center>
+                    <h3>{{ rooms.title }}</h3>
+                    </center>
+                   
+                </div>
+            </div>
+        </section>
+        <!--================End Banner Area =================-->
+
+
+ <!--================Search Room Area =================-->
+        <section class="room_details_area">
+            <div class="container">
+                <div class="row room_details_inner">
+                    <div class="col-md-8">
+                        <div class="room_details_content">
+                            <div class="room_d_main_text">
+
+                                <div class="room_details_img owl-carousel">
+                                    <div class="item">
+                                        <img src="{{ rooms.img1_url }}" alt="">
+                                    </div>
+                                    <div class="item">
+                                        <img src="{{ rooms.img2_url }}" alt="">
+                                    </div>
+                                    <div class="item">
+                                        <img src="{{ rooms.img3_url }}" alt="">
+                                    </div>
+                                </div>
+                                <a href="#"><h4>{{ rooms.title }} <span>room</span></h4></a>
+                                
+                                <h5>${{ rooms.price }} <span>/ Night</span></h5>
+                                <div class="book_table_item">
+                                        <a class="book_now_btn" href="{{ url_for('rooms.getroom', room_id=rooms) }}">BOOK NOW</a>
+                                    </div>
+                                <p>{{ rooms.description }}.</p>
+                            </div>
+                            <div class="room_service_list">
+                                <h3 class="room_d_title">Room services</h3>
+                                <div class="row room_service_list_inner">
+                                    <div class="col-sm-5 col-md-offset-right-1">
+                                        <div class="resot_list">
+                                            <ul>
+                                                <li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Satellite flat screen TV</a></li>
+                                                <li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Seating area with table</a></li>
+                                                <li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>4 single beds</a></li>
+                                                <li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Bathroom</a></li>
+                                                <li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Air-condition</a></li>
+                                                <li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Wi-fi</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-5 col-md-offset-right-1">
+                                        <div class="resot_list">
+                                            <ul>
+                                                <li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>private balcony</a></li>
+                                                <li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>good room service</a></li>
+                                                <li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>flat screen tv</a></li>
+                                                <li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>fully AC</a></li>
+                                                <li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>mountain view</a></li>
+                                                <li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>free pick & drop facilies</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                           
+                            <div class="room_details_comment">
+                                <h3 class="room_d_title">Clients Reviews</h3>
+                                <div class="fb-comments" data-href="http://127.0.0.1:5000" data-width="" data-numposts="10"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="search_right_sidebar">
+                            <div class="book_room_area">
+                                <div class="book_room_box">
+                                    <div class="book_table_item">
+                                        
+                                        <h3 class=text-center>Advertising</h3>
+                                      
+
+                               
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--================End Search Room Area =================-->
+
+
+
+{% endblock content %}

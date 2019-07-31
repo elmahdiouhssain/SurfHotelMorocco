@@ -1,0 +1,125 @@
+{% import "bootstrap/utils.html" as utils %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% from "_formhelpers.html" import render_field %}
+{% extends "__layout__.html" %}
+{% block content %}
+
+<!--================Header Area =================-->
+
+ <!--================Banner Area =================-->
+        <section class="banner_area">
+            <div class="container">
+                <div class="banner_inner_content">
+                	<center>
+                    <h3>SURF COACHING</h3>
+                    </center>
+                   
+                </div>
+            </div>
+        </section>
+        <!--================End Banner Area =================-->
+
+        <br>
+                    <div class="container">
+                        <div class="introduction_left_text">
+                            <div class="resort_title">
+                                <center>
+
+                                
+                          
+
+
+                            </div>
+                            <h4><p>This package is optimal for those that have not tried surfing before, Those with who have basic surfing skills, or those of an intermediate level looking to further enhance their ability. Our experienced surf instructors will bring you to the best surf spots according to your surfing skills and the surf conditions. Prime wave and wind conditions will let you make huge advances in learning to surf and will improve you to the next level of surfing. We will cater the instruction based on your needs with our small group coaching. You will learn theories and etiquette of surfing, and arm yourself with the skills to learn to surf on your own. Starting to surf the whitewater and going onto catch the green waves we will be with you every step of the way..</p></h4>
+
+                            <br>
+
+                            <p><img class="imargen alignnone wp-image-2365 size-medium" src="http://thesurfhotelmorocco.com/wp-content/uploads/2018/06/SCH_6801.jpg" alt="" width="1200" height="500" /></p>
+
+                            <br>
+
+                            <h4 class="imargen">What can I expect?</h4>
+                            <blockquote><p>Beach safety and surf equipment</p>
+                            <p>Positioning yourself correctly on the surfboard and in the ocean</p>
+                            <p>How to paddle, pop up and ride your first wave in the broken white water waves</p>
+                            <p>How to get ‘out back’ to the green unbroken waves and ride them to the beach</p>
+                            <p>How to play with speed and turn in both directions</p>
+                            <p>You will learn about rips, tides and surfers’ etiquette</p></blockquote>
+                            <h4 class="imargen">Surf Coaching Package Prices</h4>
+
+                            <br>
+
+                            <p>Price per person 
+                                <style type="text/css">
+                                    @font-face{font-family:TablePress;src:url(tablepress.eot);src:url(tablepress.eot?#ie) format('embedded-opentype'),url(data:application/x-font-woff;base64,d09GRgABAAAAAAXYAAwAAAAACXwAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABGRlRNAAABHAAAABwAAAAcZInHOk9TLzIAAAE4AAAAPgAAAGB7NXPDY21hcAAAAXgAAABMAAABUvD45QVnYXNwAAABxAAAAAgAAAAIAAAAEGdseWYAAAHMAAABKQAAAgjYVHFyaGVhZAAAAvgAAAAvAAAANv2jaBNoaGVhAAADKAAAAB0AAAAkCk0F6GhtdHgAAANIAAAAIAAAACgoAADqbG9jYQAAA2gAAAAWAAAAFgJWAbxtYXhwAAADgAAAAB0AAAAgAE4AH25hbWUAAAOgAAAB3AAAA43ZugaUcG9zdAAABXwAAABZAAAAgeNVfAkAAAABAAAAAMwXcmMAAAAAy1XFoAAAAADNHI82eJxjYGbexjiBgZWBhaWHxZiBgaENQjMVM0SB+ThBQWVRMYPDh+APd9gY/gP5bAyMykCKEUmJAgMjAC56Ct8AAHicY2BgYGaAYBkGRgYQ8AHyGMF8FgYDIM0BhEwMDB9CPtz6cOf/fyAr+MN1EIt/A78evy5UFxgwsjHAuYxAPSB9KICRYdgDAL67D8kAAQAB//8AD3icXU/NTsJAEJ5ZFggxxmCbkiwHAzLTowlu4ejeyxPwCOBR7r3rE/geeubuG3i3TyGts12MtT18ndnd7w8QsvpdX/Q/IAboI9s1rpY3mMTDkcAVDuaqPD0RqRfaU05UGSxJhj2p5wDNUplqyjsZQT6EQ/2mc9GcyBIPReQOObPrkccHMZhgonMS3R1tiLCsDNFm8bgQF3W06ekgqqnN5Aa//D9nlrOgDeg09Aq4lK3RTiX16n621BBVLrIe2PQK09s2c4THyPIvF4TrAndwO5uHvhPUwOa7MNw8FsCtZfZDJBKB66BQhW58cRwHW09OVMEtI+3aOhEHX+E63crM2dh6X+WazMFLvf6F57OvAqiPGvo+87Tb+LrT4X9/7lT6bKXs9vsByDlkyAAAAHicY2BkYGAA4mO9Sxji+W2+MnCzM4DAWZl+bwT9fyuLN+tpIJeDgQkkCgAbqgoOAHicY2BkYGBj+HeXgYGdAQRYvBkYGVABFwA+hgJEAAAAeJxjZ4AAdiBmaWAwBeJSFhAbiJkaGByAGMwGADa+AxEAAAAAAAAAAAAqAFgAdgCUALIA0AEEAAB4nGNgZGBg4GKQYWBiAAEQycgAEnMA8xkABjEAbgAAAHicjZJBaxNBFMf/u0mbJoig5KC3QcRblt2tFCm9lEp701iKIHiZJLPJ0mSnzE5S8h38BB79Nn4ab94E/zN9JVB7MCEzv/3Pm/f+720ADPEbCe4/qXCCAV4Kp+jhrXAHGb4Ld/Ecv4T38Cx5I7yPQfJBuIdPyR/hAzxJa+E+Buk3Zku6fal8xwn9dIRTPMVr4Q6+4kS4S/Wn8B5eJanwPobJO+EefiRfhA/wIv0o3Mcw3YRyV9CYYAmDMRzXll9c6cnSjJ1pyZcU51gzRDMAl2a+XmrCOSwa+Lg7RhgolJxKzv2Yv8cSqwfZ7iILHGHEdcT7OfdDJreNP7dublSZ5epY7QwpMUCxOBoVozIvDh/v4mEx/JsE+MwQx+A6dhO8hA7y2EvwUjLEuLa2jSqyPFcsV/7H0MbxUFMOYwkhVSykODAb10U8OePTDbY8qel0QV3FO1PSvaUqDnh3p5LBB8WxxozqKnZ4TU1T9THfhJ3vsjTcw9M02s1ocWl0a5QzlXHKW+UXRp3Zm62r5wuvWjP1oenKunhS8YUo7/TMrLS7Vtp7V0/WMaSxvp6aNoP8FYKzU9zGOpbOTHidzqvTW9PaFZ/e0+QmtnJBatjAlqLeGHWhm9kWfwGPR6C4eJxjYGIAg/9VDFEM2AAXEDMyMDEyMTIzsjCyMrIxsjNy8CRnpJYV5efF56SmlfDCOEWZ6RklXMmJRakl8Sn55XkcEGZpAVQMpJgbwgQrZSnOLyoBACnGHqgAAAA=) format('woff'),url(tablepress.ttf) format('truetype'),url(tablepress.svg#TablePress) format('svg');font-weight:400;font-style:normal}.tablepress-table-description{clear:both;display:block}.tablepress{border-collapse:collapse;border-spacing:0;width:100%;margin-bottom:1em;border:none}.tablepress td,.tablepress th{padding:8px;border:none;background:0 0;text-align:left;float:none!important}.tablepress tbody td{vertical-align:top}.tablepress tbody td,.tablepress tfoot th{border-top:1px solid #ddd}.tablepress tbody tr:first-child td{border-top:0}.tablepress thead th{border-bottom:1px solid #ddd}.tablepress tfoot th,.tablepress thead th{background-color:#d9edf7;font-weight:700;vertical-align:middle}.tablepress .odd td{background-color:#f9f9f9}.tablepress .even td{background-color:#fff}.tablepress .row-hover tr:hover td{background-color:#f3f3f3}.tablepress img{margin:0;padding:0;border:none;max-width:none}.dataTables_wrapper{clear:both;margin-bottom:1em}.dataTables_wrapper .tablepress{clear:both;margin:0!important}.dataTables_length{float:left;white-space:nowrap}.dataTables_filter{float:right;white-space:nowrap}.dataTables_wrapper .dataTables_filter input{margin-left:.5em}.dataTables_info{clear:both;float:left;margin:4px 0 0}.dataTables_paginate{float:right;margin:4px 0 0}.dataTables_paginate a{color:#111!important;display:inline-block;outline:0;position:relative;text-decoration:underline;margin:0 5px}.dataTables_paginate a:first-child{margin-left:0}.dataTables_paginate a:last-child{margin-right:0}.paginate_button:hover{cursor:pointer;text-decoration:none}.paginate_button.disabled{color:#999!important;text-decoration:none;cursor:default}.paginate_button.current{font-weight:700;text-decoration:none;cursor:default}.dataTables_paginate.paging_simple{padding:0 15px}.paging_simple .paginate_button.next:after,.paging_simple .paginate_button.previous:before{text-align:left;font-family:TablePress;font-size:14px;font-weight:700;-webkit-font-smoothing:antialiased;content:"\f053";text-shadow:.1em .1em #666;position:absolute;top:0;right:auto;bottom:0;left:-14px;margin:auto;height:14px;width:14px;line-height:1}.paging_simple .paginate_button.next:after{text-align:right;content:"\f054";left:auto}.paginate_button:after,.paginate_button:before{color:#d9edf7}.paginate_button:hover:after,.paginate_button:hover:before{color:#049cdb}.paginate_button.disabled:after,.paginate_button.disabled:before{color:#f9f9f9}.dataTables_processing{display:none}.dataTables_scroll{clear:both}.dataTables_scrollBody{-webkit-overflow-scrolling:touch}.dataTables_wrapper .dataTables_scroll div.dataTables_scrollBody td>div.dataTables_sizing,.dataTables_wrapper .dataTables_scroll div.dataTables_scrollBody th>div.dataTables_sizing{height:0;overflow:hidden;margin:0!important;padding:0!important}.tablepress .sorting,.tablepress .sorting_asc,.tablepress .sorting_desc{position:relative;padding-right:20px;cursor:pointer;outline:0}.tablepress .sorting:after,.tablepress .sorting_asc:after,.tablepress .sorting_desc:after{font-family:TablePress;font-weight:400;font-size:14px;-webkit-font-smoothing:antialiased;position:absolute;top:0;bottom:0;left:auto;right:6px;margin:auto;height:14px;line-height:1}.tablepress .sorting:after{content:"\f0dc"}.tablepress .sorting_asc:after{content:"\f0d8";padding:0 0 2px}.tablepress .sorting_desc:after{content:"\f0d7"}.tablepress .sorting:hover,.tablepress .sorting_asc,.tablepress .sorting_desc{background-color:#049cdb}.dataTables_scrollBody .tablepress thead th:after{content:""}.dataTables_wrapper:after{content:"";display:block;clear:both;visibility:hidden;line-height:0;height:0}.dataTables_wrapper label input,.dataTables_wrapper label select{display:inline;margin:2px;width:auto}
+                                </style>
+                                    <table id="tablepress-2" class="tablepress tablepress-id-2">
+                                    <thead>
+                                    <tr class="row-1 odd">
+                                        <th class="column-1">Roomtype</th><th class="column-2"><a href="#">SHARED ROOM</a></th><th class="column-3"><a href="#">DOUBLE/TWIN</a></th><th class="column-4"><a href="#">JUNIOR SUITE</a></th><th class="column-5"><a href="#">SENIOR SUITE</a></th>
+                                    </tr>
+                                    </thead>
+                                    <tbody class="row-hover">
+                                    <tr class="row-2 even">
+                                        <td class="column-1">2 nights, 1 days surf</td><td class="column-2">€152</td><td class="column-3">€158</td><td class="column-4">€164</td><td class="column-5">€170</td>
+                                    </tr>
+                                    <tr class="row-3 odd">
+                                        <td class="column-1">3 nights, 2 days surf</td><td class="column-2">€218</td><td class="column-3">€227</td><td class="column-4">€236</td><td class="column-5">€245</td>
+                                    </tr>
+                                    <tr class="row-4 even">
+                                        <td class="column-1">4 nights, 3 days surf</td><td class="column-2">€284</td><td class="column-3">€296</td><td class="column-4">€308</td><td class="column-5">€320</td>
+                                    </tr>
+                                    <tr class="row-5 odd">
+                                        <td class="column-1">7 nights, 6 days surf</td><td class="column-2">€443</td><td class="column-3">€464</td><td class="column-4">€485</td><td class="column-5">€506</td>
+                                    </tr>
+                                    <tr class="row-6 even">
+                                        <td class="column-1">10 nights, 9 days surf</td><td class="column-2">€626</td><td class="column-3">€656</td><td class="column-4">€686</td><td class="column-5">€716</td>
+                                    </tr>
+                                    <tr class="row-7 odd">
+                                        <td class="column-1">14 nights, 13 days surf</td><td class="column-2">€861</td><td class="column-3">€903</td><td class="column-4">€945</td><td class="column-5">€987</td>
+                                    </tr>
+                                    <tr class="row-8 even">
+                                        <td class="column-1">Extra night &amp; Surf day</td><td class="column-2">€66</td><td class="column-3">€69</td><td class="column-4">€72</td><td class="column-5">€75</td>
+                                    </tr>
+                                    <tr class="row-9 odd">
+                                        <td class="column-1">+5 Extra nights &amp; Surf day</td><td class="column-2">€61</td><td class="column-3">€64</td><td class="column-4">€67</td><td class="column-5">€70</td>
+                                    </tr>
+                                    </tbody>
+                                    </table>
+
+                                    <br>
+
+                                    <!-- #tablepress-2 from cache --> If you wish to have a double/twin room or a suite for your own, we charge a supplement of € 17/per day for a double/twin room and € 24/per day for a suite room.</p>
+                                    <h4>What is included? (7 nights package)</h4>
+                                    <blockquote><p>Agadir Airport pick up and drop off</p>
+                                    <p>7 nights in our beautiful hotel rooms with comfortable beds and en-suite bathrooms</p>
+                                    <p>7 healthy and organic breakfasts to start powerful in the day</p>
+                                    <p>6 days delicious dinner on the rooftop terrace (every Thursday the kitchen is closed)</p>
+                                    <p>6 days lunch at the beach (sandwiches/salads/fruits)</p>
+                                    <p>6 days of 2-hours surf lessons with professional surf instructor in the morning</p>
+                                    <p>6 days of 2-hours self practice surfing under surveillance of the surf instructor</p>
+                                    <p>Daily transport to the best surf spots according to the surf conditions</p>
+                                    <p>6 days surfboard use</p>
+                                    <p>6 days wet-suit use</p>
+                                    <p>Free WiFi internet access</p>
+                                    <p>Fresh towels and room cleaning</p>
+                                    <p>Possibility to book <a href="http://thesurfhotelmorocco.com/activities/">excursions </a>around Agadir</p></blockquote>
+                                    <h4>Skill Level</h4>
+                                    <blockquote><p>Beginner and Intermediate</p></blockquote>
+                                    </div>
+                                    </div></div></div></div></div>        </div>
+                                        </div><!-- /.row -->
+                                    </div><!-- /.container --></section>
+
+                          
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <br>
+
+
+
+{% endblock content %}

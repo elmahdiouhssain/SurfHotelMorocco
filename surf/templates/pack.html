@@ -1,0 +1,97 @@
+{% extends "__layout__.html" %}
+{% block content %}
+<!--================Header Area =================-->
+
+<!--================Banner Area =================-->
+        <section class="banner_area">
+            <div class="container">
+                <div class="banner_inner_content">
+                    <h3>PACKAGES</h3>
+                    <ul>
+                        <li class="active"><a href="index.html">Home</a></li>
+                        <li><a href="surf.html">packages</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <!--================End Banner Area =================-->
+
+        <!--================Explor Room Area =================-->
+        <section class="explor_room_area explore_room_list">
+            <div class="container">
+                <div class="explor_title row m0">
+                    <div class="left_ex_title">
+                        <h2>Packages <span>Offered</span></h2>
+                        <p>choose package according to budget</p>
+                        
+                    </div>
+                </div>
+                <div class="row explor_room_item_inner">
+                    <div class="col-md-4 col-sm-6">
+                        <div class="explor_item">
+                            <a href="{{ url_for('main.surfcoaching') }}" class="room_image">
+                                <img src="{{ url_for('static', filename='img/coching.png') }}" alt="">
+                            </a>
+                            <center>
+                            <div class="explor_text">
+                                <a href="{{ url_for('main.surfcoaching') }}"><h4>SURF COACHING</h4></a>
+                                <p>
+                                    STARTING AT €143
+                                </p>
+
+                                <div class="explor_footer">
+                                        <a class="book_now_btn" href="{{ url_for('main.surfcoaching') }}">View details</a>
+                            </div>
+                            </center>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="explor_item">
+                            <a href="{{ url_for('main.surfguiding') }}" class="room_image">
+                                <img src="{{ url_for('static', filename='img/SURF-GUIDING.png') }}" alt="">
+                            </a>
+                            <center>
+                            <div class="explor_text">
+                                <a href="{{ url_for('main.surfguiding') }}"><h4>SURF GUIDING</h4></a>
+                                <p>
+                                    STARTING AT €125
+                                </p>
+                                <div class="explor_footer">
+                                    
+                                    
+                                        <a class="book_now_btn" href="{{ url_for('main.surfguiding') }}">View details</a>
+                                    
+                                </div>
+                            </center>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="explor_item">
+                            <a href="{{ url_for('main.surfyoga') }}" class="room_image">
+                                <img src="{{ url_for('static', filename='img/YOGA.png') }}" alt="">
+                            </a>
+                            <center>
+                            <div class="explor_text">
+                                <a href="{{ url_for('main.surfyoga') }}"><h4>SURF & YOGA</h4></a>
+                                <p>
+                                    STARTING AT €167
+                                </p>
+                                <div class="explor_footer">
+                                    
+                                        <a class="book_now_btn" href="{{ url_for('main.surfyoga') }}">View details</a>
+                                    </div>
+                                </center>
+                          
+                        </div>
+                    </div>
+                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+               
+            </div>
+        </section>
+        <!--================End Explor Room Area =================-->
+ {% endblock content %}

@@ -1,0 +1,118 @@
+{% import "bootstrap/utils.html" as utils %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% from "_formhelpers.html" import render_field %}
+{% extends "__layout__.html" %}
+{% block content %}
+
+<!--================Header Area =================-->
+
+<!--================Banner Area =================-->
+        <section class="banner_area">
+            <div class="container">
+            	
+                <div class="banner_inner_content">
+                    <h3>Book Now</h3>
+                  
+                </div>
+               
+            </div>
+        </section>
+        <br>
+
+        <div class="container">
+        <form class="form-horizontal" role="form" method="POST" action="">
+            <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+                    <center>
+                    <h2>Please Complete your Reservation</h2>
+                    <p>Room Selected : <font color="#2ec3f4"><strong>{{ rooms.title }}</strong></font></p>
+                    
+                    {% if error %}
+                        <p class=error><strong>Error:</strong> {{ error }}
+                    {% endif %}
+                        <br>
+                    {% with messages = get_flashed_messages(with_categories=true) %}
+                    {% if messages %}
+                    <div class="alert alert-{{ messages.0.0 }}" role="alert">
+                        {% for category, message in messages %}
+                    {{ message }} </br>
+                    {% endfor %}
+                     </div>
+                     {% endif %}
+                    {% endwith %}
+                    </center>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+                    <div class="form-group has-danger">
+
+                <form>
+                    <div class="col-sm-12">
+                        <div class="row">
+                            {{ che.csrf_token }} 
+                            <form class="form-inline"> 
+                            <div class="form-group">
+                              
+                                {{ render_field(che.fullname, class='form-control', placeholder='Enter FirstName Here..') }}
+
+                              
+                    			{% for error in che.fullname.errors %}
+                                <span style="color: red;">[{{ error }}]</span>
+                                {% endfor %}
+
+                                {{ render_field(che.email, class='form-control', placeholder='Enter Email Here..') }}
+                               
+                    			{% for error in che.email.errors %}
+                                <span style="color: red;">[{{ error }}]</span>
+                                {% endfor %}
+
+                                {{ render_field(che.city, class='form-control', placeholder='Enter City Here..') }}
+                               
+                    			{% for error in che.city.errors %}
+                                <span style="color: red;">[{{ error }}]</span>
+                                {% endfor %}
+
+                                {{ render_field(che.state, class='form-control', placeholder='Enter State Here..') }}
+                             
+                    			{% for error in che.state.errors %}
+                                <span style="color: red;">[{{ error }}]</span>
+                                {% endfor %}
+
+                                {{ render_field(che.zipcode, class='form-control', placeholder='Enter ZipCode Here..') }}
+                           
+                    			{% for error in che.zipcode.errors %}
+                                <span style="color: red;">[{{ error }}]</span>
+                                {% endfor %}
+
+                                {{ render_field(che.phone, class='form-control', placeholder='Enter Phone Here..') }}
+                            
+                    			{% for error in che.phone.errors %}
+                                <span style="color: red;">[{{ error }}]</span>
+                                {% endfor %}
+
+                                {{ render_field(che.addr, class='form-control', placeholder='Enter Address Here..') }}
+                                  
+                    			{% for error in che.addr.errors %}
+                                <span style="color: red;">[{{ error }}]</span>
+                                {% endfor %}
+
+                                {{ che.recaptcha }}
+
+                             <button type="submit" class="btn btn-primary btn-block login-btn">Book Now</button>
+                              </div>                  
+                            </div>
+                </form> 
+                </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    <br>
+
+    </div>
+    </div>
+
+{% endblock content %}

@@ -1,0 +1,79 @@
+{% import "bootstrap/utils.html" as utils %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% from "_formhelpers.html" import render_field %}
+{% extends "playout.html" %}
+{% block content %}
+
+<style type="text/css">
+      strong {
+
+    color: #007bff;
+    }
+</style>
+<div class="container">
+        <form class="form-horizontal" role="form" method="POST" action="">
+            <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+                    <center>
+                    {% if error %}
+                        <p class=error><strong>Error:</strong> {{ error }}
+                    {% endif %}
+                        <br>
+                    {% with messages = get_flashed_messages(with_categories=true) %}
+                    {% if messages %}
+                    <div class="alert alert-{{ messages.0.0 }}" role="alert">
+                        {% for category, message in messages %}
+                    {{ message }} </br>
+                    {% endfor %}
+                     </div>
+                     {% endif %}
+                    {% endwith %}
+                    </center>
+                    <hr>
+                     </div>
+                      </div>
+                      <div>
+                        <div class="container">
+                             <div class="panel-body">
+           <div class="table-responsive">
+              <table class="table table-striped table-hover">
+              <tbody>
+                <tr>
+                  <th><strong>Full Name : </strong></th>
+                  <td>{{ checkouts.fullname }}</td>
+                </tr>
+
+                <tr>
+                  <th><strong>City : </strong></th>
+                  <td>{{ checkouts.city }}</td>
+                </tr>
+                 <tr>
+                  <th><strong>Phone : </strong></th>
+                  <td>{{ checkouts.phone }}</td>
+                </tr>
+                 <tr>
+                  <th><strong>ZipCode : </strong></th>
+                  <td>{{ checkouts.zipcode }}</td>
+                </tr>
+                <tr>
+                  <th><strong>Adrress : </strong></th>
+                  <td>{{ checkouts.addr }}</td>
+                </tr>
+                <tr>
+                  <th><strong>Email : </strong></th>
+                  <td>{{ checkouts.email }}</td>
+                </tr>
+                <tr>
+                  <th><strong>State : </strong></th>
+                  <td>{{ checkouts.state }}</td>
+                </tr>
+                
+
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+
+{% endblock content %}
